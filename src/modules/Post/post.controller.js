@@ -3,6 +3,7 @@ import { catchError } from "../../middleware/catchError.js";
 import { AppError } from "../../utils/AppError.js";
 
 const AddPost = catchError(async(req,res)=>{
+    if(req.body.image)req.body.image = req.file.filename
     const post = await Post.insertMany(req.body)
     res.status(201).json({message:"Post Created",post})
 })

@@ -14,6 +14,7 @@ const schema = new Schema({
         type:mongoose.Types.ObjectId,
         ref:'User'
     },
+    imageUrl:String,
     likes:[{
         type:mongoose.Types.ObjectId,
         ref:'User'
